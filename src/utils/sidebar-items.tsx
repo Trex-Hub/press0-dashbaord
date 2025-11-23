@@ -24,7 +24,7 @@ export const sidebarItems: SidebarItem[] = [
   {
     id: 'chats',
     label: 'Chats',
-    href: '#',
+    href: '/dashboard/chats',
     icon: (
       <IconMessageCircle className='h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200' />
     ),
@@ -32,7 +32,7 @@ export const sidebarItems: SidebarItem[] = [
   {
     id: 'analytics',
     label: 'Analytics',
-    href: '#',
+    href: '/dashboard/analytics',
     icon: (
       <IconChartArea className='h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200' />
     ),
