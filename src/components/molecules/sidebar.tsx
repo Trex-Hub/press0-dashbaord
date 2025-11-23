@@ -10,11 +10,16 @@ import {
   SidebarBody,
   SidebarLink,
 } from '@/src/components/ui/sidebar';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@/src/components/ui/avatar';
+import ThemeSwitch from '@/src/components/molecules/theme-switch';
 // LINKS
 import { sidebarItems } from '@/src/utils/sidebar-items';
 // NEXT
 import Link from 'next/link';
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -34,14 +39,17 @@ const Sidebar = () => {
           </div>
         </div>
         <div>
-          <div className='flex items-center justify-start gap-2  group/sidebar py-2'>
-            <Avatar className='size-8 border border-neutral-600 dark:border-neutral-400'>
-              <AvatarImage src={image ?? ''} />
-              <AvatarFallback>{name?.charAt(0)}</AvatarFallback>
-            </Avatar>
-            <p className='text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block p-0 m-0'>
-              {name}
-            </p>
+          <div className='flex flex-row items-center justify-between'>
+            <div className='flex flex-row items-center justify-start gap-2  group/sidebar py-2'>
+              <Avatar className='size-8 border border-neutral-600 dark:border-neutral-400'>
+                <AvatarImage src={image ?? ''} />
+                <AvatarFallback>{name?.charAt(0)}</AvatarFallback>
+              </Avatar>
+              <p className='text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block p-0 m-0'>
+                {name}
+              </p>
+            </div>
+            <ThemeSwitch />
           </div>
         </div>
       </SidebarBody>

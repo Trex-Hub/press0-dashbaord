@@ -3,6 +3,7 @@ import { Figtree } from 'next/font/google';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/src/components/ui/sonner';
+import { ThemeProvider } from '@/src/components/provider/theme-provider';
 
 const figtree = Figtree({
   variable: '--font-figtree',
@@ -27,10 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={`${figtree.variable} ${inter.variable} dark`}>
+    <html
+      lang='en'
+      className={`${figtree.variable} ${inter.variable}`}
+      suppressHydrationWarning>
       <body className='antialiased'>
-        {children}
-        <Toaster richColors />
+        <ThemeProvider attribute='class' defaultTheme='dark'>
+          {children}
+          <Toaster richColors />
+        </ThemeProvider>
       </body>
     </html>
   );
