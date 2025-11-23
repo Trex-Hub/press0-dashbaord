@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={`${figtree.variable} ${inter.variable}`}>
+    <html lang='en' className={`${figtree.variable} ${inter.variable} dark`}>
       <body className='antialiased'>
         {children}
         <Toaster richColors />
