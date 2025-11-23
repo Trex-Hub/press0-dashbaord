@@ -7,11 +7,9 @@ import {
 import { EyeIcon, EyeOffIcon } from 'lucide-react';
 import { useState } from 'react';
 
-type PasswordInputProps = React.ComponentProps<'input'> & {
-  label?: string;
-};
+type PasswordInputProps = React.ComponentProps<'input'>;
 
-const PasswordInput = ({ label, ...props }: PasswordInputProps) => {
+const PasswordInput = ({ ...props }: PasswordInputProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPasswordToggle = () => {
