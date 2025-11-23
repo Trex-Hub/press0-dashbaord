@@ -1,4 +1,3 @@
-'use server';
 // AUTH
 import { auth } from '@/src/lib/auth';
 // NEXT

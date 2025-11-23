@@ -28,8 +28,8 @@ const Sidebar = () => {
         <div className='flex flex-1 flex-col overflow-x-hidden overflow-y-auto'>
           <Logo />
           <div className='mt-8 flex flex-col gap-2'>
-            {sidebarItems.map((item, idx) => (
-              <SidebarLink key={idx} link={item} />
+            {sidebarItems.map(({ id, ...item }) => (
+              <SidebarLink key={id} link={item} />
             ))}
           </div>
         </div>

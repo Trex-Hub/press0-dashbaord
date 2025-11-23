@@ -121,6 +121,20 @@ export const MobileSidebar = ({
           <IconMenu2
             className='text-neutral-800 dark:text-neutral-200'
             onClick={() => setOpen(!open)}
+            role='button'
+            aria-label='Open menu'
+            tabIndex={0}
+            onKeyDown={e => {
+              if (
+                e.key === 'Enter' ||
+                e.key === ' ' ||
+                e.keyCode === 13 ||
+                e.keyCode === 32
+              ) {
+                e.preventDefault();
+                setOpen(!open);
+              }
+            }}
           />
         </div>
         <AnimatePresence>
@@ -139,7 +153,16 @@ export const MobileSidebar = ({
               )}>
               <div
                 className='absolute right-10 top-10 z-50 text-neutral-800 dark:text-neutral-200'
-                onClick={() => setOpen(!open)}>
+                onClick={() => setOpen(!open)}
+                role='button'
+                aria-label='Close menu'
+                tabIndex={0}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpen(!open);
+                  }
+                }}>
                 <IconX />
               </div>
               {children}
@@ -162,7 +185,7 @@ export const SidebarLink = ({
   const { open, animate } = useSidebar();
   return (
     <Link
-      href={link.href ?? '#'}
+      href={link.href}
       className={cn(
         'flex items-center justify-start gap-2  group/sidebar py-2',
         className
@@ -172,8 +195,11 @@ export const SidebarLink = ({
 
       <motion.span
         animate={{
-          display: animate ? (open ? 'inline-block' : 'none') : 'inline-block',
           opacity: animate ? (open ? 1 : 0) : 1,
+        }}
+        style={{
+          pointerEvents: animate ? (open ? 'auto' : 'none') : 'auto',
+          visibility: animate ? (open ? 'visible' : 'hidden') : 'visible',
         }}
         className='text-neutral-700 dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0'>
         {link.label}

@@ -7,12 +7,14 @@ import {
 } from '@tabler/icons-react';
 
 type SidebarItem = {
+  id: string;
   label: string;
   href: string;
   icon: React.ReactNode;
 };
 export const sidebarItems: SidebarItem[] = [
   {
+    id: 'dashboard',
     label: 'Dashboard',
     href: '/dashboard',
     icon: (
@@ -20,6 +22,7 @@ export const sidebarItems: SidebarItem[] = [
     ),
   },
   {
+    id: 'chats',
     label: 'Chats',
     href: '#',
     icon: (
@@ -27,6 +30,7 @@ export const sidebarItems: SidebarItem[] = [
     ),
   },
   {
+    id: 'analytics',
     label: 'Analytics',
     href: '#',
     icon: (
@@ -34,6 +38,7 @@ export const sidebarItems: SidebarItem[] = [
     ),
   },
   {
+    id: 'logout',
     label: 'Logout',
     href: '/api/sign-out',
     icon: (
