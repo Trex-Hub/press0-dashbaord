@@ -4,6 +4,7 @@ import {
   IconBrandTabler,
   IconMessageCircle,
   IconChartArea,
+  IconUser,
 } from '@tabler/icons-react';
 
 type SidebarItem = {
@@ -35,6 +36,14 @@ export const sidebarItems: SidebarItem[] = [
     href: '/dashboard/analytics',
     icon: (
       <IconChartArea className='h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200' />
+    ),
+  },
+  {
+    id: 'profile',
+    label: 'Profile',
+    href: '/dashboard/profile',
+    icon: (
+      <IconUser className='h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200' />
     ),
   },
   {
