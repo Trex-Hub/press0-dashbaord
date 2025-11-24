@@ -22,11 +22,11 @@ const Home = () => {
         </Button>
       ) : (
         <div className='flex flex-row gap-5 max-w-2xl w-full'>
-          <Button className='flex-1'>
+          <Button className='flex-1' asChild>
             <Link href='/login'>Login</Link>
           </Button>
-          <Button className='flex-1'>
-            <Link href=''>Chat with AI</Link>
+          <Button className='flex-1' asChild>
+            <Link href='/'>Chat with AI</Link>
           </Button>
         </div>
       )}
