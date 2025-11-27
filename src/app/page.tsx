@@ -17,7 +17,7 @@ const Home = () => {
         </p>
       </div>
       {session ? (
-        <Button className='w-full max-w-xl'>
+        <Button className='w-full max-w-xl' asChild>
           <Link href='/dashboard'>Dashboard</Link>
         </Button>
       ) : (
