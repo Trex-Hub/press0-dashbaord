@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 // COMPONENTS
 import CommandMenu from '@/src/components/molecules/command-menu';
 // STORES
-import { useCommandMenuStore } from '@/src/app/stores/command-menu-store';
+import { useCommandMenuStore } from '@/src/stores/command-menu-store';
 
 export function CommandProvider({ children }: { children: React.ReactNode }) {
   const { open, setOpen } = useCommandMenuStore();

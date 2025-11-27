@@ -3,7 +3,7 @@
 import { InputGroup, InputGroupAddon } from '@/src/components/ui/input-group';
 import { Kbd, KbdGroup } from '@/src/components/ui/kbd';
 import { SearchIcon } from 'lucide-react';
-import { useCommandMenuStore } from '@/src/app/stores/command-menu-store';
+import { useCommandMenuStore } from '@/src/stores/command-menu-store';
 import { Button } from '@/src/components/ui/button';
 
 export const SearchBar = () => {

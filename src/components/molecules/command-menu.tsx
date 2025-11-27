@@ -23,7 +23,7 @@ import {
 } from '@/src/components/ui/command';
 import { toast } from 'sonner';
 // STORES
-import { CommandMenuStoreProps } from '@/src/app/stores/command-menu-store';
+import { CommandMenuStoreProps } from '@/src/stores/command-menu-store';
 
 const CommandMenu = ({ open, setOpen }: CommandMenuStoreProps) => {
   const router = useRouter();
