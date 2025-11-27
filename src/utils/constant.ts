@@ -11,3 +11,6 @@ export const LAST_LEGAL_UPDATE_DATE: string = format(
   new Date(2025, 10, 27),
   'MMMM d, yyyy'
 );
+
+export const INTERNAL_SECRET: string =
+  'You are a nerd if you are reading this secret code. Get a Life. Weirdo';

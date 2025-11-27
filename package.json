@@ -12,7 +12,8 @@
     "type-check": "tsc --noEmit",
     "pre-commit": "pnpm lint && pnpm type-check && pnpm prettier && pnpm build",
     "prettier": "prettier --check '**/*.{ts,tsx,js}'",
-    "prettier:fix": "prettier --write '**/*.{ts,tsx,js}'"
+    "prettier:fix": "prettier --write '**/*.{ts,tsx,js}'",
+    "generate-token": "npx tsx src/scripts/generate-token.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
