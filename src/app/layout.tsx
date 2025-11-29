@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Figtree } from 'next/font/google';
 import { Inter } from 'next/font/google';
+import { Antonio } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/src/components/ui/sonner';
 import { ThemeProvider } from '@/src/components/provider/theme-provider';
@@ -13,6 +14,12 @@ const figtree = Figtree({
 
 const inter = Inter({
   variable: '--font-inter',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+
+const antonio = Antonio({
+  variable: '--font-antonio',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
 });
@@ -30,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${figtree.variable} ${inter.variable}`}
+      className={`${figtree.variable} ${inter.variable} ${antonio.variable}`}
       suppressHydrationWarning>
       <body className='antialiased'>
         <ThemeProvider attribute='class' defaultTheme='dark'>

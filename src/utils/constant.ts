@@ -14,3 +14,6 @@ export const LAST_LEGAL_UPDATE_DATE: string = format(
 
 export const INTERNAL_SECRET: string =
   'You are a nerd if you are reading this secret code. Get a Life. Weirdo';
+
+export const WHATSAPP_CHAT_URL: string =
+  process.env.NEXT_PUBLIC_WHATSAPP_CHAT_URL ?? 'https://wa.me/15556376380';
