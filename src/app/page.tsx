@@ -4,6 +4,7 @@ import { AnimatedText } from '@/src/components/molecules/animated-text';
 import { Button } from '@/src/components/ui/button';
 import { AnimatedComponents } from '@/src/components/molecules/animated-nodes';
 import Iphone from '@/src/components/molecules/iphone-mockup';
+import DummyConversation from '@/src/components/organisms/dummy-conversation';
 // ICONS
 import { Asterisk, Rss, ShieldCheck, Globe } from 'lucide-react';
 // NEXT
@@ -56,7 +57,9 @@ const Home = () => {
         <div className='flex flex-col items-center justify-center w-full h-full'>
           <div className='relative h-fit w-full sm:w-4/5 lg:w-2/5 overflow-hidden'>
             <AnimatedComponents direction='bottom'>
-              <Iphone />
+              <Iphone>
+                <DummyConversation />
+              </Iphone>
             </AnimatedComponents>
           </div>
         </div>

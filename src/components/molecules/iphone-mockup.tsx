@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { cn } from '@/src/lib/utils';
 
 const PHONE_WIDTH = 433;
@@ -21,11 +21,28 @@ const RADIUS_V = (SCREEN_RADIUS / SCREEN_HEIGHT) * 100;
 export interface IphoneProps extends HTMLAttributes<HTMLDivElement> {
   src?: string;
   videoSrc?: string;
+  children?: ReactNode;
 }
 
-const Iphone = ({ src, videoSrc, className, style, ...props }: IphoneProps) => {
+const Iphone = ({
+  src,
+  videoSrc,
+  children,
+  className,
+  style,
+  ...props
+}: IphoneProps) => {
+  const hasChildren = !!children;
   const hasVideo = !!videoSrc;
-  const hasMedia = hasVideo || !!src;
+  const hasMedia = hasChildren || hasVideo || !!src;
+
+  const screenStyle = {
+    left: `${LEFT_PCT}%`,
+    top: `${TOP_PCT}%`,
+    width: `${WIDTH_PCT}%`,
+    height: `${HEIGHT_PCT}%`,
+    borderRadius: `${RADIUS_H}% / ${RADIUS_V}%`,
+  };
 
   return (
     <div
@@ -38,16 +55,18 @@ const Iphone = ({ src, videoSrc, className, style, ...props }: IphoneProps) => {
         ...style,
       }}
       {...props}>
-      {hasVideo && (
+      {hasChildren && (
+        <div
+          className='absolute z-50 overflow-hidden pt-12 xs:pt-16 sm:pt-20 lg:pt-24'
+          style={screenStyle}>
+          {children}
+        </div>
+      )}
+
+      {!hasChildren && hasVideo && (
         <div
           className='pointer-events-none absolute z-0 overflow-hidden'
-          style={{
-            left: `${LEFT_PCT}%`,
-            top: `${TOP_PCT}%`,
-            width: `${WIDTH_PCT}%`,
-            height: `${HEIGHT_PCT}%`,
-            borderRadius: `${RADIUS_H}% / ${RADIUS_V}%`,
-          }}>
+          style={screenStyle}>
           <video
             className='block size-full object-cover'
             src={videoSrc}
@@ -60,16 +79,10 @@ const Iphone = ({ src, videoSrc, className, style, ...props }: IphoneProps) => {
         </div>
       )}
 
-      {!hasVideo && src && (
+      {!hasChildren && !hasVideo && src && (
         <div
           className='pointer-events-none absolute z-0 overflow-hidden'
-          style={{
-            left: `${LEFT_PCT}%`,
-            top: `${TOP_PCT}%`,
-            width: `${WIDTH_PCT}%`,
-            height: `${HEIGHT_PCT}%`,
-            borderRadius: `${RADIUS_H}% / ${RADIUS_V}%`,
-          }}>
+          style={screenStyle}>
           <img
             src={src}
             alt=''
