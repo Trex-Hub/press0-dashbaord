@@ -39,7 +39,11 @@ export function AnimatedText({
   }, []);
 
   return (
-    <div className={cn('flex flex-wrap gap-4 overflow-hidden', className)}>
+    <div
+      className={cn(
+        'flex flex-wrap gap-4 overflow-hidden items-center justify-center',
+        className
+      )}>
       {words.map((word, index) => (
         <span
           key={`${word}-${index}`}
