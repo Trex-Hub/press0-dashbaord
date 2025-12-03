@@ -9,8 +9,6 @@ import DummyConversation from '@/src/components/organisms/dummy-conversation';
 import { Asterisk, Rss, ShieldCheck, Globe } from 'lucide-react';
 // NEXT
 import Link from 'next/link';
-// CONSTANTS
-import { WHATSAPP_CHAT_URL } from '@/src/utils/constant';
 
 const Home = () => {
   return (
@@ -41,17 +39,16 @@ const Home = () => {
           />
         </div>
         <p className='text-muted-foreground/80 max-w-xl'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum animi,
-          ipsam provident optio delectus neque aliquid cumque. Beatae, odio!
+          An AI agent that analyzes videos, extracts key claims, and verifies
+          them using real-time knowledge, helping people understand what&apos;s
+          true and what isn&apos;t.
         </p>
         <div className='bg-muted-foreground/10 flex rounded-3xl p-1.5'>
           <Button className='rounded-3xl' size={'lg'} asChild>
-            <Link href='/demo'>See It in Action</Link>
+            <Link href='/how-it-works'>See How It Works</Link>
           </Button>
           <Button className='rounded-3xl' variant={'ghost'} size={'lg'} asChild>
-            <Link href={WHATSAPP_CHAT_URL} target='_blank'>
-              Message Now
-            </Link>
+            <Link href='/demo'>Try the Demo</Link>
           </Button>
         </div>
         <div className='flex flex-col items-center justify-center w-full h-full'>
